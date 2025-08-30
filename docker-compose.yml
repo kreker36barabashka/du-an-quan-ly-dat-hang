@@ -11,7 +11,7 @@ services:
   user-service:
     build: ./services/user
     ports:
-      - '3001:3000'
+      - '3001:3001'  # Fix port mapping to match internal service port
 
   database:
     image: mongo
@@ -24,4 +24,4 @@ services:
   notification-service:
     build: ./services/notification
     ports:
-      - '3002:3000'
+      - '3002:3000'  # Port mapping for notification service
