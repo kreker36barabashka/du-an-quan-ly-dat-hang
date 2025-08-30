@@ -4,7 +4,7 @@ services:
   order-service:
     build: ./services/order
     ports:
-      - '3000:3000'
+      - '3000:3000'  # Port mapping for order service to match internal service port
     depends_on:
       - mongodb
 
@@ -16,7 +16,7 @@ services:
   database:
     image: mongo
     ports:
-      - '27017:27017'
+      - '27017:27017'  # Port mapping for MongoDB to expose on host
     depends_on:
       - order-service
       - user-service
