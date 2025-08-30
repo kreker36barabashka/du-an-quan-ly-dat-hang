@@ -24,4 +24,4 @@ services:
   notification-service:
     build: ./services/notification
     ports:
-      - '3002:3000'  # Port mapping for notification service
+      - '3002:3002'  # Port mapping for notification service to match internal service port
