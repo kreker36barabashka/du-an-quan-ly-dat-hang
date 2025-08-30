@@ -13,13 +13,13 @@ services:
     ports:
       - '3001:3000'
 
-database:
+  database:
     image: mongo
-depends_on:
-      - order-service
-      - user-service
     ports:
       - '27017:27017'
+    depends_on:
+      - order-service
+      - user-service
 
   notification-service:
     build: ./services/notification
