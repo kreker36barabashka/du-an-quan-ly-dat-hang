@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  order-service:
+    build: ./services/order
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+
+  user-service:
+    build: ./services/user
+    ports:
+      - '3001:3000'
+
+database:
+    image: mongo
+depends_on:
+      - order-service
+      - user-service
+    ports:
+      - '27017:27017'
+
+  notification-service:
+    build: ./services/notification
+    ports:
+      - '3002:3000'
